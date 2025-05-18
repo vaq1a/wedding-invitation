@@ -1,0 +1,29 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "1.4.0",
+    "@nuxt/fonts": "0.11.4",
+    "@nuxt/image": "1.10.0",
+    "@nuxt/ui": "3.1.2",
+    "@prisma/client": "6.8.2",
+    "@prisma/nuxt": "0.3.0",
+    "eslint": "^9.0.0",
+    "nuxt": "^3.17.3",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
+  },
+  "packageManager": "pnpm@8.14.0+sha1.bb42032ff80dba5f9245bc1b03470d2fa0b7fb2f",
+  "devDependencies": {
+    "prisma": "6.8.2"
+  }
+}

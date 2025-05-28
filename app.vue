@@ -1,24 +1,12 @@
 <template>
   <NuxtLayout>
-    <div>
-      <header>
-        <nav class="navigation">
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/users">Users</NuxtLink>
-        </nav>
-      </header>
+    <NuxtPage />
 
-      <NuxtPage />
-
-      <footer>
-        <p>© 2025 Wedding invitation</p>
-      </footer>
-    </div>
+    <footer>
+      <p>© 2025 | Future wish</p>
+    </footer>
   </NuxtLayout>
 </template>
-
-<script setup lang="ts">
-</script>
 
 <style scoped lang="scss">
 .navigation {

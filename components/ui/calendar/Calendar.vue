@@ -95,7 +95,7 @@ withDefaults(defineProps<Props>(), {
     width: 38px;
     height: 38px;
     color: $color-primary;
-    animation: heartbeat-pause 2.5s infinite;
+    animation: heartbeat-pause 2s infinite;
 
     &--position {
       position: absolute;

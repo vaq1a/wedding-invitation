@@ -1,13 +1,19 @@
 <template>
   <main>
+    <Invitation />
     <Calendar />
-    <GuestForm />
+    <Location />
+    <Timetable />
+<!--    <GuestForm />-->
   </main>
 </template>
 
 <script setup lang="ts">
-import Calendar from "~/components/ui/calendar/Calendar.vue";
-import GuestForm from "~/components/guest-form/GuestForm.vue";
+import Calendar from "~/components/shared/Calendar.vue";
+import Invitation from "~/components/shared/Invitation.vue";
+import Location from "~/components/shared/Location.vue";
+import Timetable from "~/components/shared/Timetable.vue";
+// import GuestForm from "~/components/shared/GuestForm.vue";
 
 useHead({
   title: 'Приглашение',

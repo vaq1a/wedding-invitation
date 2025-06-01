@@ -1,27 +1,32 @@
 <template>
-  <div class="calendar">
-    <div class="calendar__header">
-      <h3>{{ month }} {{ year }}</h3>
-    </div>
-    <div class="calendar-grid">
-      <div class="calendar-grid__weekdays">
-        <div v-for="day in WEEK_DAYS" :key="day">{{ day }}</div>
-      </div> 
-      <div class="calendar-grid__days days">
-        <div v-for="empty in EMPTY_DAYS" :key="`empty-${empty}`" class="days__item"/>
-        <div
-            v-for="day in TOTAL_DAYS"
-            :key="day"
-            class="days__item"
-            :class="{ 'days__item--special-date': day === specialDate }"
-        >
-          <template v-if="day === specialDate">
-            <Heart class="days__heart days__heart--position" />
-            <span class="days__date days__date--position">{{ day }}</span>
-          </template>
-          <template v-else>
-            {{ day }}
-          </template>
+  <div class="wrapper">
+    <Title class="title">
+      ДАТА СВАДЬБЫ
+    </Title>
+    <div class="calendar">
+      <div class="calendar__header">
+        <h3>{{ month }} {{ year }}</h3>
+      </div>
+      <div class="calendar-grid">
+        <div class="calendar-grid__weekdays">
+          <div v-for="day in WEEK_DAYS" :key="day">{{ day }}</div>
+        </div>
+        <div class="calendar-grid__days days">
+          <div v-for="empty in EMPTY_DAYS" :key="`empty-${empty}`" class="days__item"/>
+          <div
+              v-for="day in TOTAL_DAYS"
+              :key="day"
+              class="days__item"
+              :class="{ 'days__item--special-date': day === specialDate }"
+          >
+            <template v-if="day === specialDate">
+              <HeartIcon class="days__heart days__heart--position" />
+              <span class="days__date days__date--position">{{ day }}</span>
+            </template>
+            <template v-else>
+              {{ day }}
+            </template>
+          </div>
         </div>
       </div>
     </div>
@@ -29,8 +34,9 @@
 </template>
 
 <script setup lang="ts">
-import Heart from '~/components/icons/Heart.vue';
+import HeartIcon from '~/components/atomic/HeartIcon.vue';
 import {EMPTY_DAYS, TOTAL_DAYS, WEEK_DAYS} from "~/constants/calendar";
+import Title from "~/components/atomic/Title.vue";
 
 interface Props {
   month?: string;
@@ -46,6 +52,17 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  color: $color-primary;
+}
+
 .calendar {
   width: 300px;
   padding: 16px;

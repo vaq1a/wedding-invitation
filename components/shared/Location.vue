@@ -1,0 +1,96 @@
+<template>
+  <div class="wrapper">
+    <Title class="title">
+      МЕСТО <br> ПРОВЕДЕНИЯ
+    </Title>
+    <div class="preview">
+      <div class="image-container">
+        <BorderIcon class="border border--top" />
+        <NuxtImg
+            src="/homestead.png"
+            :alt="imageAlt"
+            class="responsive-image"
+        />
+        <BorderIcon class="border border--bottom" />
+      </div>
+      <Button class="button" @click="() => console.log('Hello')">
+        открыть <br> карту
+      </Button>
+    </div>
+    <Description class="description">
+      Загородная усадьба “Охотник у дуба” <br>
+      Минский район, аг.Новоселье, <br>
+      ул. Лесная, 3
+    </Description>
+  </div>
+</template>
+
+<script setup lang="ts">
+import Title from "~/components/atomic/Title.vue";
+import Button from "~/components/atomic/Button.vue";
+import Description from "~/components/atomic/Description.vue";
+import BorderIcon from "~/components/atomic/BorderIcon.vue";
+
+defineProps({
+  imageAlt: {
+    type: String,
+    default: 'Место проведения'
+  }
+});
+</script>
+
+<style scoped lang="scss">
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  color: $color-primary;
+}
+
+.preview {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  width: 100%;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.button {
+  position: relative;
+  z-index: 3;
+  margin: -50px auto 0;
+}
+
+.description {
+  color: $color-primary;
+}
+
+.border {
+  position: absolute;
+  z-index: 3;
+
+  &--top {
+    top: -45px;
+    left: 0;
+    right: 0;
+  }
+
+  &--bottom {
+    bottom: 15px;
+    left: 0;
+    right: 0;
+  }
+}
+</style>

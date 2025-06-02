@@ -1,32 +1,25 @@
 <script setup lang="ts">
-import type { NewUser } from '~/server/db/schema';
+  import type { NewUser } from "~/server/db/schema";
 
-const {
-  users,
-  loading,
-  error,
-  fetchUsers,
-  createUser,
-  deleteUser
-} = useUsers();
+  const { users, loading, error, fetchUsers, createUser, deleteUser } = useUsers();
 
-const newUser = ref<NewUser>({
-  name: '',
-  email: '',
-});
+  const newUser = ref<NewUser>({
+    name: "",
+    email: "",
+  });
 
-onMounted(() => {
-  fetchUsers();
-});
+  onMounted(() => {
+    fetchUsers();
+  });
 
-const handleSubmit = async () => {
-  try {
-    await createUser(newUser.value);
-    newUser.value = { name: '', email: '' };
-  } catch (error) {
-    console.error('Failed to create user:', error);
-  }
-};
+  const handleSubmit = async () => {
+    try {
+      await createUser(newUser.value);
+      newUser.value = { name: "", email: "" };
+    } catch (error) {
+      console.error("Failed to create user:", error);
+    }
+  };
 </script>
 
 <template>
@@ -37,17 +30,8 @@ const handleSubmit = async () => {
     <div v-else-if="error" class="error">{{ error }}</div>
 
     <form @submit.prevent="handleSubmit">
-      <input
-          v-model="newUser.name"
-          placeholder="Name"
-          required
-      />
-      <input
-          v-model="newUser.email"
-          type="email"
-          placeholder="Email"
-          required
-      />
+      <input v-model="newUser.name" placeholder="Name" required />
+      <input v-model="newUser.email" type="email" placeholder="Email" required />
       <button type="submit">Add User</button>
     </form>
 

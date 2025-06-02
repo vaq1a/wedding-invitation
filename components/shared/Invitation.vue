@@ -1,54 +1,54 @@
 <template>
   <div class="wrapper">
-    <BorderIcon class="border border--top" />
+    <BorderIcon class="border--top border" />
     <div class="invitation">
       <Title class="title">
-        ДОРОГИЕ РОДНЫЕ <br>
+        ДОРОГИЕ РОДНЫЕ <br />
         И БЛИЗКИЕ!
       </Title>
       <Description class="description">
         С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!
       </Description>
     </div>
-    <BorderIcon class="border border--bottom" />
+    <BorderIcon class="border--bottom border" />
   </div>
 </template>
 
 <script setup lang="ts">
-import Description from "~/components/atomic/Description.vue";
-import Title from "~/components/atomic/Title.vue";
-import BorderIcon from "~/components/atomic/BorderIcon.vue";
+  import BorderIcon from "~/components/atomic/BorderIcon.vue";
+  import Description from "~/components/atomic/Description.vue";
+  import Title from "~/components/atomic/Title.vue";
 </script>
 
 <style scoped lang="scss">
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.border {
-  position: relative;
-  z-index: 3;
-
-  &--top {
-    top: 20px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
-  &--bottom {
-    bottom: 20px;
-  }
-}
+  .border {
+    position: relative;
+    z-index: 3;
 
-.invitation {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 70px 20px;
-  background-color: $color-primary;
+    &--top {
+      top: 20px;
+    }
 
-  .title,
-  .description {
-    color: $color-light;
+    &--bottom {
+      bottom: 20px;
+    }
   }
-}
+
+  .invitation {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 70px 20px;
+    background-color: $color-primary;
+
+    .title,
+    .description {
+      color: $color-light;
+    }
+  }
 </style>

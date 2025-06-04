@@ -15,40 +15,40 @@
 </template>
 
 <script setup lang="ts">
-  import BorderIcon from "~/components/atomic/BorderIcon.vue";
-  import Description from "~/components/atomic/Description.vue";
-  import Title from "~/components/atomic/Title.vue";
+import BorderIcon from '~/components/atomic/BorderIcon.vue';
+import Description from '~/components/atomic/Description.vue';
+import Title from '~/components/atomic/Title.vue';
 </script>
 
 <style scoped lang="scss">
-  .wrapper {
-    display: flex;
-    flex-direction: column;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  position: relative;
+  z-index: 3;
+
+  &--top {
+    top: 20px;
   }
 
-  .border {
-    position: relative;
-    z-index: 3;
-
-    &--top {
-      top: 20px;
-    }
-
-    &--bottom {
-      bottom: 20px;
-    }
+  &--bottom {
+    bottom: 20px;
   }
+}
 
-  .invitation {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 70px 20px;
-    background-color: $color-primary;
+.invitation {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 70px 20px;
+  background-color: $color-primary;
 
-    .title,
-    .description {
-      color: $color-light;
-    }
+  .title,
+  .description {
+    color: $color-light;
   }
+}
 </style>

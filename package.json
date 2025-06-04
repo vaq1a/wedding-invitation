@@ -19,6 +19,7 @@
     "@nuxt/image": "^1.10.0",
     "@vee-validate/nuxt": "^4.15.0",
     "@vee-validate/yup": "^4.15.0",
+    "canvas-confetti": "^1.9.3",
     "drizzle-orm": "^0.43.1",
     "eslint": "^9.27.0",
     "nuxt": "^3.17.4",

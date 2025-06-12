@@ -1,16 +1,9 @@
 @use "../common/variables" as *;
 
-html {
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-
 body {
   width: 100%;
   max-width: 455px;
   margin: 0 auto;
   background-color: $color-light;
+  box-shadow: 0 4px 20px 12px $color-shadow;
 }

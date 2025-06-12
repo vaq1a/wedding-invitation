@@ -30,6 +30,7 @@
     border: 10px solid $color-light;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: none;
 
     &:hover {
       background-color: $color-primary-90;

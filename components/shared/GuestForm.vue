@@ -200,6 +200,7 @@ const onSubmit = async (values: User) => {
   border: none;
   border-bottom: 1px solid $color-light;
   padding: 10px 5px;
+  border-radius: 0;
 
   &::placeholder {
     color: $color-light;

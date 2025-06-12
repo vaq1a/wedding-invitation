@@ -27,7 +27,7 @@ import type { User } from '~/server/db/schema';
     <div v-if="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
 
-    <table v-if="users.length">
+    <table class="table" v-if="users.length">
       <thead>
       <tr>
         <th class="th">Номер</th>
@@ -54,7 +54,7 @@ import type { User } from '~/server/db/schema';
 </template>
 
 <style scoped lang="scss">
-.td, .th {
+.table, .td, .th {
   padding: 10px;
   border: 1px solid $color-primary;
 }

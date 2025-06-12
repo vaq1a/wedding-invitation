@@ -11,7 +11,7 @@
         <BorderIcon class="border--bottom border" />
       </div>
       <Button class="button" @click="() => console.log('Hello')">
-        открыть <br />
+        Открыть
         карту
       </Button>
     </div>

@@ -33,13 +33,11 @@
 
     &:hover {
       background-color: $color-primary-90;
-      transform: scale(1.05);
     }
 
     &:disabled {
       background-color: $color-dark-10;
       cursor: not-allowed;
-      transform: none;
     }
   }
 </style>

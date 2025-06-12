@@ -14,11 +14,12 @@
       <Title class="title">АНКЕТА ГОСТЯ</Title>
       <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form" @submit="onSubmit">
         <div class="form-group">
-          <label class="form-label">Перечислите себя и своих близких</label>
+          <label class="form-label">Пожалуйста, введите имя и фамилию всех, кто планирует посетить мероприятие:</label>
           <Field
             name="fullName"
             type="text"
             class="text-input"
+            placeholder="Здесь ввод данных :)"
             :class="{ error: errors.fullName }"
           />
           <ErrorMessage class="error-text" name="fullName" />
@@ -64,12 +65,12 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Кукую песню вы хотите услышать на свадьбе?</label>
-          <Field class="text-input" name="music" type="text" :class="{ error: errors.music }" />
+          <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
+          <Field class="text-input" name="music" placeholder="Здесь ввод музыки :)" type="text" :class="{ error: errors.music }" />
           <ErrorMessage class="error-text" name="music" />
         </div>
 
-        <button class="submit-button" type="submit">Отправить</button>
+        <Button class="submit-button" type="submit">Отправить анкету</Button>
       </Form>
     </div>
     <BorderIcon class="border--bottom border" />
@@ -84,6 +85,7 @@ import Title from '~/components/atomic/Title.vue';
 import { ErrorMessage, Field, Form } from 'vee-validate';
 import * as yup from 'yup';
 import type { User } from '~/server/db/schema';
+import Button from '~/components/atomic/Button.vue';
 
 const schema = yup.object({
   fullName: yup
@@ -169,5 +171,94 @@ const onSubmit = async (values: User) => {
   &--bottom {
     bottom: 20px;
   }
+}
+
+.wedding-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: $color-light;
+  position: relative;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.text-input {
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-light;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-light;
+  padding: 10px 5px;
+
+  &::placeholder {
+    color: $color-light;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.error-text {
+  font-size: 15px;
+  line-height: 18px;
+  color: $color-error-40;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.form-radio[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-light;
+  background-color: $color-primary;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+
+  &:checked:after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color-light;
+  }
+}
+
+.submit-button {
+  position: absolute;
+  bottom: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 </style>

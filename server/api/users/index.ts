@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   try {
     switch (method) {
       case "GET":
-        return await db.select().from(users).orderBy(users.name);
+        return await db.select().from(users);
 
       case "POST": {
         const body = await readBody(event);
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
           message: "Method not allowed",
         });
     }
-  } catch (error: any) {
+  } catch (error: Error) {
     throw createError({
       statusCode: 500,
       message: error.message,

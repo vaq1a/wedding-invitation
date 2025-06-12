@@ -6,6 +6,7 @@
     <Location />
     <Timetable />
     <GuestForm />
+    <Ultimate />
   </main>
 </template>
 
@@ -15,6 +16,7 @@ import GuestForm from '~/components/shared/GuestForm.vue';
 import Invitation from '~/components/shared/Invitation.vue';
 import Location from '~/components/shared/Location.vue';
 import Timetable from '~/components/shared/Timetable.vue';
+import Ultimate from '~/components/shared/Ultimate.vue';
 // import Envelope from '~/components/shared/Envelope.vue';
 
 useHead({

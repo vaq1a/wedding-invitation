@@ -64,8 +64,7 @@
     }
 
     &--middle {
-      margin-top: 50px;
-      margin-bottom: 93px;
+      margin-block: 50px;
     }
 
     &--end {

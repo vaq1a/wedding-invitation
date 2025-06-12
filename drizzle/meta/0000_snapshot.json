@@ -1,5 +1,5 @@
 {
-  "id": "5cbb130e-3c7a-47dc-8008-094bee2d630a",
+  "id": "c25e5283-4ab8-4dce-9ded-6777e166bc80",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -14,29 +14,41 @@
           "primaryKey": true,
           "notNull": true
         },
-        "name": {
-          "name": "name",
+        "fullName": {
+          "name": "fullName",
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
-        "email": {
-          "name": "email",
-          "type": "text",
+        "presence": {
+          "name": "presence",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
+        },
+        "transfer": {
+          "name": "transfer",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "agreement": {
+          "name": "agreement",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "music": {
+          "name": "music",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "users_email_unique": {
-          "name": "users_email_unique",
-          "nullsNotDistinct": false,
-          "columns": ["email"]
-        }
-      },
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false

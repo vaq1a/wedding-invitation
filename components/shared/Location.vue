@@ -16,9 +16,7 @@
       </Button>
     </div>
     <Description class="description">
-      Загородная усадьба “Охотник у дуба” <br />
-      Минский район, аг.Новоселье, <br />
-      ул. Лесная, 3
+      Загородная усадьба “Охотник у дуба” Минский район, аг.Новоселье, ул. Лесная, 3
     </Description>
   </div>
 </template>
@@ -42,10 +40,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
   }
 
   .title {
+    padding: 20px;
     color: $color-primary;
   }
 
@@ -72,6 +71,7 @@
   }
 
   .description {
+    padding: 20px;
     color: $color-primary;
   }
 

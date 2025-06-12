@@ -1,13 +1,9 @@
 <template>
   <div class="wrapper">
     <Description class="description">
-      Пожалуйста, подтвердите свое <br />
-      присутствие и заполните анкету до <br />
-      <span class="description__date"
-        >10.07.2025 <OutlineIcon class="description__icon description__icon--position" /> </span
-      >, чтобы мы могли <br />
-      планировать торжество <br />
-      наилучшим образом
+      Пожалуйста, подтвердите свое присутствие и заполните анкету до <span class="description__date"
+        >10.07.2025 <OutlineIcon class="description__icon description__icon--position" /></span
+      >, чтобы мы могли планировать торжество наилучшим образом
     </Description>
     <BorderIcon class="border--top border" />
     <div class="form">
@@ -133,6 +129,7 @@ const onSubmit = async (values: User) => {
 <style scoped lang="scss">
 .description {
   color: $color-primary;
+  padding: 20px;
 
   &__date {
     display: inline-block;

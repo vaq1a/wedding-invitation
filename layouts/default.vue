@@ -1,9 +1,15 @@
-@use "../common/variables" as *;
+<template>
+  <main class="main">
+    <slot />
+  </main>
+</template>
 
-body {
+<style scoped lang="scss">
+.main {
   width: 100%;
   max-width: 455px;
   margin: 0 auto;
   background-color: $color-light;
   box-shadow: 0 4px 20px 12px $color-shadow;
 }
+</style>

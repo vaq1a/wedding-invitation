@@ -1,27 +1,3 @@
-<script setup lang="ts">
-import type { User } from '~/server/db/schema';
-
-  const users = ref<User[]>([]);
-  const loading = ref(false);
-  const error = ref<string | null>(null);
-
-  const fetchUsers = async () => {
-    loading.value = true;
-    error.value = null;
-    try {
-      users.value = await $fetch("/api/users");
-    } catch (e: any) {
-      error.value = e.message;
-    } finally {
-      loading.value = false;
-    }
-  };
-
-  onMounted(() => {
-    fetchUsers();
-  });
-</script>
-
 <template>
   <div>
     <div v-if="loading">Loading...</div>
@@ -52,6 +28,34 @@ import type { User } from '~/server/db/schema';
     <p v-else>No users found.</p>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { User } from '~/server/db/schema';
+
+definePageMeta({
+  layout: 'fullscreen',
+})
+
+const users = ref<User[]>([]);
+const loading = ref(false);
+const error = ref<string | null>(null);
+
+const fetchUsers = async () => {
+  loading.value = true;
+  error.value = null;
+  try {
+    users.value = await $fetch("/api/users");
+  } catch (e: any) {
+    error.value = e.message;
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchUsers();
+});
+</script>
 
 <style scoped lang="scss">
 .table, .td, .th {

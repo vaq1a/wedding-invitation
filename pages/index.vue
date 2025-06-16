@@ -1,13 +1,10 @@
 <template>
-  <main>
-<!--        <Envelope />-->
     <Invitation />
     <Calendar />
     <Location />
     <Timetable />
     <GuestForm />
     <Ultimate />
-  </main>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +14,10 @@ import Invitation from '~/components/shared/Invitation.vue';
 import Location from '~/components/shared/Location.vue';
 import Timetable from '~/components/shared/Timetable.vue';
 import Ultimate from '~/components/shared/Ultimate.vue';
-// import Envelope from '~/components/shared/Envelope.vue';
+
+definePageMeta({
+  layout: 'default',
+})
 
 useHead({
   title: 'Приглашение',

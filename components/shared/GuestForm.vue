@@ -83,6 +83,33 @@ import * as yup from 'yup';
 import type { User } from '~/server/db/schema';
 import Button from '~/components/atomic/Button.vue';
 
+const triggerConfetti = () => {
+  const colors = ["#bb0000", "#0000ee"];
+  const end = Date.now() + 5 * 1000;
+  function frame() {
+    useConfetti({
+      particleCount: 2,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors,
+    });
+    useConfetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors,
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }
+  requestAnimationFrame(frame);
+};
+
+
 const schema = yup.object({
   fullName: yup
     .string()
@@ -110,19 +137,23 @@ const schema = yup.object({
 const onSubmit = async (values: User) => {
   const { fullName, presence, transfer, agreement, music } = values;
 
-  // TODO: try catch
-  const newUser = await $fetch('/api/users', {
-    method: 'POST',
-    body: {
-      fullName,
-      presence,
-      transfer,
-      agreement,
-      music,
-    },
-  });
+  try {
+    await $fetch('/api/users', {
+      method: 'POST',
+      body: {
+        fullName,
+        presence,
+        transfer,
+        agreement,
+        music,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+  }
 
-  console.log('newUser: ', newUser);
+
+  triggerConfetti()
 };
 </script>
 

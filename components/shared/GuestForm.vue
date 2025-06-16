@@ -84,7 +84,8 @@ import type { User } from '~/server/db/schema';
 import Button from '~/components/atomic/Button.vue';
 
 const triggerConfetti = () => {
-  const colors = ["#bb0000", "#0000ee"];
+  const COLORS = ["#eac60b", "#fffc46", "#ffffff"];
+
   const end = Date.now() + 5 * 1000;
   function frame() {
     useConfetti({
@@ -92,20 +93,21 @@ const triggerConfetti = () => {
       angle: 60,
       spread: 55,
       origin: { x: 0 },
-      colors: colors,
+      colors: COLORS,
     });
     useConfetti({
       particleCount: 2,
       angle: 120,
       spread: 55,
       origin: { x: 1 },
-      colors: colors,
+      colors: COLORS,
     });
 
     if (Date.now() < end) {
       requestAnimationFrame(frame);
     }
   }
+
   requestAnimationFrame(frame);
 };
 

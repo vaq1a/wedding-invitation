@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@vee-validate/nuxt'],
+  modules: ['@nuxt/eslint', '@nuxt/fonts', 'nuxt-toast', '@nuxt/image', '@vee-validate/nuxt'],
   css: ['~/assets/styles/global.scss'],
   vite: {
     css: {

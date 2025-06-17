@@ -23,11 +23,13 @@
     "drizzle-orm": "^0.43.1",
     "eslint": "^9.27.0",
     "nuxt": "^3.17.4",
+    "nuxt-toast": "^1.1.4",
     "pg": "^8.16.0",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
     "@types/pg": "^8.15.2",
     "drizzle-kit": "^0.31.1",
     "prettier": "^3.5.3",

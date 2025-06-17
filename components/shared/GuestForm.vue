@@ -10,7 +10,10 @@
       <Title class="title">АНКЕТА ГОСТЯ</Title>
       <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form" @submit="onSubmit">
         <div class="form-group">
-          <label class="form-label">Пожалуйста, введите имя и фамилию всех, кто планирует посетить мероприятие:</label>
+          <label class="form-label">Пожалуйста, укажите свои данные: <br>
+            - Фамилия и имя <br>
+            - Члены семьи, которые идут со мной <br>
+            (Пример: Иванов Иван, жена Мария, сын Петр, дочь Анна)</label>
           <Field
             name="fullName"
             type="text"
@@ -79,84 +82,10 @@ import Description from '~/components/atomic/Description.vue';
 import OutlineIcon from '~/components/atomic/OutlineIcon.vue';
 import Title from '~/components/atomic/Title.vue';
 import { ErrorMessage, Field, Form } from 'vee-validate';
-import * as yup from 'yup';
-import type { User } from '~/server/db/schema';
 import Button from '~/components/atomic/Button.vue';
+import { useGuestForm } from '~/composables/useGuestForm';
 
-const triggerConfetti = () => {
-  const COLORS = ["#eac60b", "#fffc46", "#ffffff"];
-
-  const end = Date.now() + 5 * 1000;
-  function frame() {
-    useConfetti({
-      particleCount: 2,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 },
-      colors: COLORS,
-    });
-    useConfetti({
-      particleCount: 2,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 },
-      colors: COLORS,
-    });
-
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
-  }
-
-  requestAnimationFrame(frame);
-};
-
-
-const schema = yup.object({
-  fullName: yup
-    .string()
-    .required('Имя и фамилия обязательны')
-    .min(2, 'Минимум 2 символа')
-    .matches(/^[a-zA-Zа-яА-Я\s]+$/, 'Только буквы и пробелы'),
-  presence: yup
-    .string()
-    .required('Выберите один из вариантов')
-    .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
-  transfer: yup
-    .string()
-    .required('Выберите один из вариантов')
-    .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
-  agreement: yup
-    .string()
-    .required('Выберите один из вариантов')
-    .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
-  music: yup
-    .string()
-    .min(2, 'Минимум 2 символа')
-    .matches(/^[a-zA-Zа-яА-Я0-9\s]+$/, 'Только буквы, цифры и пробелы'),
-});
-
-const onSubmit = async (values: User) => {
-  const { fullName, presence, transfer, agreement, music } = values;
-
-  try {
-    await $fetch('/api/users', {
-      method: 'POST',
-      body: {
-        fullName,
-        presence,
-        transfer,
-        agreement,
-        music,
-      },
-    });
-  } catch (error) {
-    console.error(error);
-  }
-
-
-  triggerConfetti()
-};
+const { schema, onSubmit } = useGuestForm()
 </script>
 
 <style scoped lang="scss">
@@ -180,6 +109,7 @@ const onSubmit = async (values: User) => {
 
 .title {
   color: $color-light;
+  text-transform: uppercase;
 }
 
 .form {

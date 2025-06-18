@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 import type { FormValues } from '~/types/guest-form';
+import type { GenericObject, SubmissionHandler } from 'vee-validate';
 
 export const useGuestForm = () => {
   const toast = useToast()
@@ -57,7 +58,7 @@ export const useGuestForm = () => {
       .matches(/^[a-zA-Zа-яА-Я0-9\s\-,.]+$/, 'Только буквы, цифры и пробелы'),
   });
 
-  const onSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
+  const onSubmit: SubmissionHandler<FormValues, GenericObject, unknown> = async (values, { resetForm }) => {
     const { fullName, presence, transfer, agreement, music } = values;
 
     try {

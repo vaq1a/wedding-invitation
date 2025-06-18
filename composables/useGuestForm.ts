@@ -1,11 +1,11 @@
 import * as yup from 'yup';
-import type { User } from '~/server/db/schema';
+import type { FormValues } from '~/types/guest-form';
 
 export const useGuestForm = () => {
   const toast = useToast()
 
   const triggerConfetti = () => {
-    const COLORS = ["#eac60b", "#fffc46", "#ffffff"];
+    const COLORS = ["#eac60b", "#fffc46"];
 
     const end = Date.now() + 5 * 1000;
     function frame() {
@@ -52,11 +52,12 @@ export const useGuestForm = () => {
       .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
     music: yup
       .string()
+      .optional()
       .min(6, 'Минимум 6 символов')
       .matches(/^[a-zA-Zа-яА-Я0-9\s\-,.]+$/, 'Только буквы, цифры и пробелы'),
   });
 
-  const onSubmit = async (values: User) => {
+  const onSubmit = async (values: FormValues, { resetForm }: { resetForm: () => void }) => {
     const { fullName, presence, transfer, agreement, music } = values;
 
     try {
@@ -71,8 +72,8 @@ export const useGuestForm = () => {
         },
       });
 
+      resetForm()
       toast.success({ message: 'Форма успешно отправлена!' })
-
       triggerConfetti()
     } catch (error) {
       console.log(error);

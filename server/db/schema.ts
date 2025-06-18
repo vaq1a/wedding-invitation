@@ -8,6 +8,3 @@ export const users = pgTable("users", {
   agreement: varchar("agreement", { length: 255 }).notNull(),
   music: varchar("music", { length: 255 }),
 });
-
-export type User = typeof users.$inferSelect;
-export type NewUser = typeof users.$inferInsert;

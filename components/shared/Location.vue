@@ -10,7 +10,7 @@
         <img src="/homestead.png" :alt="imageAlt"  class="responsive-image" />
         <BorderIcon class="border--bottom border" />
       </div>
-      <Button class="button" @click="() => console.log('Hello')">
+      <Button class="button" @click="handleMapOpen">
         Открыть
         карту
       </Button>
@@ -33,6 +33,10 @@
       default: "Место проведения",
     },
   });
+
+  const handleMapOpen = () => {
+    console.log('Opening map...');
+  };
 </script>
 
 <style scoped lang="scss">
@@ -46,6 +50,7 @@
   .title {
     padding: 20px;
     color: $color-primary;
+    text-transform: uppercase;
   }
 
   .preview {

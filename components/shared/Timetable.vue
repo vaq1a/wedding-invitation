@@ -45,6 +45,7 @@
 
   .title {
     color: $color-primary;
+    text-transform: uppercase;
   }
 
   .timetable {

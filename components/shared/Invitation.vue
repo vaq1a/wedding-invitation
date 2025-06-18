@@ -46,6 +46,10 @@ import Title from '~/components/atomic/Title.vue';
   padding: 70px 20px;
   background-color: $color-primary;
 
+  .title {
+    text-transform: uppercase;
+  }
+
   .title,
   .description {
     color: $color-light;

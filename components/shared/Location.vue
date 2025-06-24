@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <Title class="title">
-      МЕСТО <br />
-      ПРОВЕДЕНИЯ
+      Место <br />
+      проведения
     </Title>
     <div class="preview">
       <div class="image-container">
@@ -50,7 +50,6 @@
   .title {
     padding: 20px;
     color: $color-primary;
-    text-transform: uppercase;
   }
 
   .preview {

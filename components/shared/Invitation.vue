@@ -2,9 +2,9 @@
   <div class="wrapper">
     <BorderIcon class="border--top border" />
     <div class="invitation">
-      <Title class="title">
-        ДОРОГИЕ РОДНЫЕ <br />
-        И БЛИЗКИЕ!
+      <Title>
+        Дорогие родные <br />
+        и близкие!
       </Title>
       <Description class="description">
         С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!
@@ -45,10 +45,6 @@ import Title from '~/components/atomic/Title.vue';
   gap: 50px;
   padding: 70px 20px;
   background-color: $color-primary;
-
-  .title {
-    text-transform: uppercase;
-  }
 
   .title,
   .description {

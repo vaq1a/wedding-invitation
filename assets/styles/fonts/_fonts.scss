@@ -1,100 +1,23 @@
 @use "../common/variables" as *;
 
-// Lato
+// Great Vibes
 @font-face {
-  font-family: "Lato";
+  font-family: "Great Vibes";
   font-style: normal;
   font-stretch: normal;
-  font-weight: 500;
-  src:
-    local("Lato"),
-    url($fonts-path + "/Lato/Lato-Medium.woff2") format("woff2");
+  font-weight: normal;
+  src: url($fonts-path + "/GreatVibes/GreatVibes-Regular.ttf") format("truetype");
   text-rendering: optimizeLegibility;
   font-display: auto;
 }
 
-// Oswald
+// Tenor Sans
 @font-face {
-  font-family: "Oswald";
+  font-family: "Tenor Sans";
   font-style: normal;
   font-stretch: normal;
-  font-weight: 400;
-  src:
-    local("Oswald"),
-    url($fonts-path + "/Oswald/Oswald-Regular.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-@font-face {
-  font-family: "Oswald";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 500;
-  src:
-    local("Oswald"),
-    url($fonts-path + "/Oswald/Oswald-Medium.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-@font-face {
-  font-family: "Oswald";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 600;
-  src:
-    local("Oswald"),
-    url($fonts-path + "/Oswald/Oswald-SemiBold.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-@font-face {
-  font-family: "Oswald";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 700;
-  src:
-    local("Oswald"),
-    url($fonts-path + "/Oswald/Oswald-Bold.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-// Segoe UI
-@font-face {
-  font-family: "SegoeUI";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 400;
-  src:
-    local("SegoeUI"),
-    url($fonts-path + "/SegoeUI/SegoeUI-Regular.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-@font-face {
-  font-family: "SegoeUI";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 600;
-  src:
-    local("SegoeUI"),
-    url($fonts-path + "/SegoeUI/SegoeUI-SemiBold.woff2") format("woff2");
-  text-rendering: optimizeLegibility;
-  font-display: auto;
-}
-
-@font-face {
-  font-family: "SegoeUI";
-  font-style: normal;
-  font-stretch: normal;
-  font-weight: 700;
-  src:
-    local("SegoeUI"),
-    url($fonts-path + "/SegoeUI/SegoeUI-Bold.woff2") format("woff2");
+  font-weight: normal;
+  src: url($fonts-path + "/Tenor/TenorSans-Regular.ttf") format("truetype");
   text-rendering: optimizeLegibility;
   font-display: auto;
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <Title class="title"> ДАТА СВАДЬБЫ </Title>
-    <div class="calendar">
+    <Title class="title"> Дата свадьбы </Title>
+    <div ref="calendar" class="calendar" :style="animationStyle">
       <div class="calendar__header">
         <h3>{{ month }} {{ year }}</h3>
       </div>
@@ -32,21 +32,32 @@
 </template>
 
 <script setup lang="ts">
-  import HeartIcon from "~/components/atomic/HeartIcon.vue";
-  import Title from "~/components/atomic/Title.vue";
-  import { EMPTY_DAYS, TOTAL_DAYS, WEEK_DAYS } from "~/constants/calendar";
+import HeartIcon from "~/components/atomic/HeartIcon.vue";
+import Title from "~/components/atomic/Title.vue";
+import { EMPTY_DAYS, TOTAL_DAYS, WEEK_DAYS } from "~/constants/calendar";
+import { useInView } from 'motion-v'
 
-  interface Props {
-    month?: string;
-    year?: number;
-    specialDate?: number;
-  }
+interface Props {
+  month?: string;
+  year?: number;
+  specialDate?: number;
+}
 
-  withDefaults(defineProps<Props>(), {
-    month: "Август",
-    year: 2025,
-    specialDate: 23,
-  });
+withDefaults(defineProps<Props>(), {
+  month: "Август",
+  year: 2025,
+  specialDate: 23,
+});
+
+const calendar = ref(null)
+const isInView = useInView(calendar, {
+  once: true,
+})
+
+const animationStyle = computed(() => ({
+  opacity: isInView.value ? 1 : 0,
+  transition: 'all 1s ease-in-out'
+}))
 </script>
 
 <style scoped lang="scss">
@@ -60,7 +71,6 @@
 
   .title {
     color: $color-primary;
-    text-transform: uppercase;
   }
 
   .calendar {

@@ -15,6 +15,7 @@
 
 <style scoped lang="scss">
   .round-button {
+    font-family: $font-tenor-sans;
     display: flex;
     align-items: center;
     justify-content: center;

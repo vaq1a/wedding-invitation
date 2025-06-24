@@ -1,3 +1,7 @@
 @use 'common/variables';
 @use 'fonts/fonts';
 @use 'base/base';
+
+body {
+  font-family: $font-tenor-sans;
+}

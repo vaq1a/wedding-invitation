@@ -7,70 +7,72 @@
     </Description>
     <BorderIcon class="border--top border" />
     <div class="form">
-      <Title class="title">АНКЕТА ГОСТЯ</Title>
-      <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form" @submit="onSubmit">
-        <div class="form-group">
-          <label class="form-label">Пожалуйста, укажите свои данные: <br>
-            - Фамилия и имя <br>
-            - Члены семьи, которые идут со мной <br>
-            (Пример: Иванов Иван, жена Мария, сын Петр, дочь Анна)</label>
-          <Field
-            name="fullName"
-            type="text"
-            class="text-input"
-            placeholder="Здесь ввод данных :)"
-            :class="{ error: errors.fullName }"
-          />
-          <ErrorMessage class="error-text" name="fullName" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Планируете ли вы присутствовать на свадьбе?</label>
-          <div class="radio-group">
-            <label class="radio-label">
-              <Field class="form-radio" name="presence" type="radio" value="yes" /> Да
-            </label>
-            <label class="radio-label">
-              <Field class="form-radio" name="presence" type="radio" value="no" /> Нет
-            </label>
+      <Title class="title">Aнкета гостя</Title>
+      <div ref="form" :style="animationStyle">
+        <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form"  @submit="onSubmit">
+          <div class="form-group">
+            <label class="form-label">Пожалуйста, укажите свои данные: <br>
+              - Фамилия и имя <br>
+              - Члены семьи, которые идут со мной <br>
+              (Пример: Иванов Иван, жена Мария, сын Петр, дочь Анна)</label>
+            <Field
+              name="fullName"
+              type="text"
+              class="text-input"
+              placeholder="Здесь ввод данных :)"
+              :class="{ error: errors.fullName }"
+            />
+            <ErrorMessage class="error-text" name="fullName" />
           </div>
-          <ErrorMessage class="error-text" name="presence" />
-        </div>
 
-        <div class="form-group">
-          <label class="form-label">Нужен ли трансфердо места проведения?</label>
-          <div class="radio-group">
-            <label class="radio-label">
-              <Field class="form-radio" name="transfer" type="radio" value="yes" /> Да
-            </label>
-            <label class="radio-label">
-              <Field class="form-radio" name="transfer" type="radio" value="no" /> Нет
-            </label>
+          <div class="form-group">
+            <label class="form-label">Планируете ли вы присутствовать на свадьбе?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <Field class="form-radio" name="presence" type="radio" value="yes" /> Да
+              </label>
+              <label class="radio-label">
+                <Field class="form-radio" name="presence" type="radio" value="no" /> Нет
+              </label>
+            </div>
+            <ErrorMessage class="error-text" name="presence" />
           </div>
-          <ErrorMessage class="error-text" name="transfer" />
-        </div>
 
-        <div class="form-group">
-          <label class="form-label">Нужен ли ночлег после свадьбы?</label>
-          <div class="radio-group">
-            <label class="radio-label">
-              <Field class="form-radio" name="agreement" type="radio" value="yes" /> Да
-            </label>
-            <label class="radio-label">
-              <Field class="form-radio" name="agreement" type="radio" value="no" /> Нет
-            </label>
+          <div class="form-group">
+            <label class="form-label">Нужен ли трансфердо места проведения?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <Field class="form-radio" name="transfer" type="radio" value="yes" /> Да
+              </label>
+              <label class="radio-label">
+                <Field class="form-radio" name="transfer" type="radio" value="no" /> Нет
+              </label>
+            </div>
+            <ErrorMessage class="error-text" name="transfer" />
           </div>
-          <ErrorMessage class="error-text" name="agreement" />
-        </div>
 
-        <div class="form-group">
-          <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
-          <Field class="text-input" name="music" placeholder="Здесь ввод музыки :)" type="text" :class="{ error: errors.music }" />
-          <ErrorMessage class="error-text" name="music" />
-        </div>
+          <div class="form-group">
+            <label class="form-label">Нужен ли ночлег после свадьбы?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <Field class="form-radio" name="agreement" type="radio" value="yes" /> Да
+              </label>
+              <label class="radio-label">
+                <Field class="form-radio" name="agreement" type="radio" value="no" /> Нет
+              </label>
+            </div>
+            <ErrorMessage class="error-text" name="agreement" />
+          </div>
 
-        <Button class="submit-button" type="submit">Отправить анкету</Button>
-      </Form>
+          <div class="form-group">
+            <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
+            <Field class="text-input" name="music" placeholder="Здесь ввод музыки :)" type="text" :class="{ error: errors.music }" />
+            <ErrorMessage class="error-text" name="music" />
+          </div>
+
+          <Button class="submit-button" type="submit">Отправить анкету</Button>
+        </Form>
+      </div>
     </div>
     <BorderIcon class="border--bottom border" />
   </div>
@@ -84,8 +86,19 @@ import Title from '~/components/atomic/Title.vue';
 import { ErrorMessage, Field, Form } from 'vee-validate';
 import Button from '~/components/atomic/Button.vue';
 import { useGuestForm } from '~/composables/useGuestForm';
+import { useInView } from 'motion-v'
 
 const { schema, onSubmit } = useGuestForm()
+
+const form = ref(null)
+const isInView = useInView(form, {
+  once: true,
+})
+
+const animationStyle = computed(() => ({
+  opacity: isInView.value ? 1 : 0,
+  transition: 'all 1s ease-in-out'
+}))
 </script>
 
 <style scoped lang="scss">
@@ -109,7 +122,6 @@ const { schema, onSubmit } = useGuestForm()
 
 .title {
   color: $color-light;
-  text-transform: uppercase;
 }
 
 .form {

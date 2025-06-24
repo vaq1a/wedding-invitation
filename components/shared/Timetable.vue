@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Title class="title">ПРОГРАММА ДНЯ</Title>
+    <Title class="title">Программа дня</Title>
     <div class="timetable">
       <div class="step">
         <span class="title">15:30</span>
@@ -45,7 +45,6 @@
 
   .title {
     color: $color-primary;
-    text-transform: uppercase;
   }
 
   .timetable {

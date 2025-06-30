@@ -6,31 +6,43 @@ export const useGuestForm = () => {
   const toast = useToast()
 
   const triggerConfetti = () => {
-    const COLORS = ["#eac60b", "#fffc46"];
+    const scalar = 2;
+    const unicorn = useConfetti.shapeFromText({ text: "🕊️", scalar });
+    const stars = useConfetti.shapeFromText({ text: "🍾", scalar });
+    const sparkles = useConfetti.shapeFromText({ text: "🌟", scalar });
 
-    const end = Date.now() + 5 * 1000;
-    function frame() {
+    const defaults = {
+      spread: 360,
+      ticks: 60,
+      gravity: 0,
+      decay: 0.96,
+      startVelocity: 20,
+      shapes: [unicorn, stars, sparkles],
+      scalar,
+    };
+
+    function shoot() {
       useConfetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: COLORS,
-      });
-      useConfetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: COLORS,
+        ...defaults,
+        particleCount: 30,
       });
 
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
+      useConfetti({
+        ...defaults,
+        particleCount: 5,
+      });
+
+      useConfetti({
+        ...defaults,
+        particleCount: 15,
+        scalar: scalar / 2,
+        shapes: ["circle"],
+      });
     }
 
-    requestAnimationFrame(frame);
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 200);
+    setTimeout(shoot, 400);
   };
 
   const schema = yup.object({

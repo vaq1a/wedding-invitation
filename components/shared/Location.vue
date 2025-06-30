@@ -84,7 +84,7 @@
     z-index: 3;
 
     &--top {
-      top: -45px;
+      top: -35px;
       left: 0;
       right: 0;
     }

@@ -20,9 +20,9 @@ const animationStyle = computed(() => ({
 
 <style scoped lang="scss">
   .title {
-    font-size: 60px;
-    line-height: 65px;
-    font-family: $font-great-vibes;
+    font-size: 58px;
+    line-height: 1;
+    font-family: $font-kindentosca;
     text-align: center;
   }
 </style>

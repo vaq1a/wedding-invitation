@@ -9,7 +9,6 @@
         <th class="th">Номер</th>
         <th class="th">Данные семьи</th>
         <th class="th">Присутствие</th>
-        <th class="th">Нужна ли доставка?</th>
         <th class="th">Нужен ли ночлег?</th>
         <th class="th">Пожелания по музыке</th>
       </tr>
@@ -19,7 +18,6 @@
         <td class="td">{{index + 1}}</td>
         <td class="td">{{user.fullName}}</td>
         <td class="td">{{user.presence}}</td>
-        <td class="td">{{user.transfer}}</td>
         <td class="td">{{user.agreement}}</td>
         <td class="td">{{user.music}}</td>
       </tr>
@@ -30,13 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import type { User } from '~/server/db/schema';
-
 definePageMeta({
   layout: 'fullscreen',
 })
 
-const users = ref<User[]>([]);
+const users = ref([]);
 const loading = ref(false);
 const error = ref<string | null>(null);
 

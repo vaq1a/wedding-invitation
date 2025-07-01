@@ -3,6 +3,7 @@
     <Calendar />
     <Location />
     <Timetable />
+    <Details />
     <GuestForm />
     <Ultimate />
 </template>
@@ -14,6 +15,7 @@ import Invitation from '~/components/shared/Invitation.vue';
 import Location from '~/components/shared/Location.vue';
 import Timetable from '~/components/shared/Timetable.vue';
 import Ultimate from '~/components/shared/Ultimate.vue';
+import Details from '~/components/shared/Details.vue';
 
 definePageMeta({
   layout: 'default',

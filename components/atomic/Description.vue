@@ -20,7 +20,7 @@ const animationStyle = computed(() => ({
 
 <style>
   .description {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.25;
     text-align: center;
   }

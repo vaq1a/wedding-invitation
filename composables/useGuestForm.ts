@@ -55,10 +55,6 @@ export const useGuestForm = () => {
       .string()
       .required('Выберите один из вариантов')
       .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
-    transfer: yup
-      .string()
-      .required('Выберите один из вариантов')
-      .oneOf(['yes', 'no'], 'Выберите один из вариантов'),
     agreement: yup
       .string()
       .required('Выберите один из вариантов')
@@ -71,7 +67,7 @@ export const useGuestForm = () => {
   });
 
   const onSubmit: SubmissionHandler<FormValues, GenericObject, unknown> = async (values, { resetForm }) => {
-    const { fullName, presence, transfer, agreement, music } = values;
+    const { fullName, presence, agreement, music } = values;
 
     try {
       await $fetch('/api/users', {
@@ -79,7 +75,6 @@ export const useGuestForm = () => {
         body: {
           fullName,
           presence,
-          transfer,
           agreement,
           music,
         },

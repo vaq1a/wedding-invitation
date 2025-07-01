@@ -13,7 +13,7 @@ import Description from '~/components/atomic/Description.vue';
 
 <style scoped lang="scss">
 .wrapper {
-  padding: 20px 20px 70px;
+  padding: 70px 20px;
 }
 
 .description {

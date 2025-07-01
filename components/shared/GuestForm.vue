@@ -1,78 +1,63 @@
 <template>
   <div class="wrapper">
-    <Description class="description">
-      Пожалуйста, подтвердите свое присутствие и заполните анкету до <span class="description__date"
-        >10.07.2025 <OutlineIcon class="description__icon description__icon--position" /></span
-      >, чтобы мы могли планировать торжество наилучшим образом
-    </Description>
     <BorderIcon class="border--top border" />
     <div class="form">
       <Title class="title">Aнкета гостя</Title>
       <div ref="form" :style="animationStyle">
-        <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form"  @submit="onSubmit">
-          <div class="form-group">
-            <label class="form-label">Пожалуйста, укажите свои данные: <br>
-              - Фамилия и имя <br>
-              - Члены семьи, которые идут со мной <br>
-              (Пример: Иванов Иван, жена Мария, сын Петр, дочь Анна)</label>
-            <Field
-              name="fullName"
-              type="text"
-              class="text-input"
-              placeholder="Здесь ввод данных :)"
-              :class="{ error: errors.fullName }"
-            />
-            <ErrorMessage class="error-text" name="fullName" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Планируете ли вы присутствовать на свадьбе?</label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <Field class="form-radio" name="presence" type="radio" value="yes" /> Да
+          <Form v-slot="{ errors }" :validation-schema="schema" class="wedding-form"  @submit="onSubmit">
+            <div class="form-group">
+              <label class="form-label">Пожалуйста, укажите свои данные: <br>
+                <span class="form-label__example">
+                  - Фамилия и имя <br>
+                  - Члены семьи c которыми идете<br>
+                (Пример: Иванов Иван, жена Мария, сын Петр, дочь Анна)
+                </span>
               </label>
-              <label class="radio-label">
-                <Field class="form-radio" name="presence" type="radio" value="no" /> Нет
-              </label>
+              <Field
+                name="fullName"
+                type="text"
+                class="text-input"
+                placeholder="Введите данные..."
+                :class="{ error: errors.fullName }"
+              />
+              <ErrorMessage class="error-text" name="fullName" />
             </div>
-            <ErrorMessage class="error-text" name="presence" />
-          </div>
 
-          <div class="form-group">
-            <label class="form-label">Нужен ли трансфердо места проведения?</label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <Field class="form-radio" name="transfer" type="radio" value="yes" /> Да
-              </label>
-              <label class="radio-label">
-                <Field class="form-radio" name="transfer" type="radio" value="no" /> Нет
-              </label>
+            <div class="form-group">
+              <label class="form-label">Планируете ли вы присутствовать на свадьбе?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <Field class="form-radio" name="presence" type="radio" value="yes" /> Да
+                </label>
+                <label class="radio-label">
+                  <Field class="form-radio" name="presence" type="radio" value="no" /> Нет
+                </label>
+              </div>
+              <ErrorMessage class="error-text" name="presence" />
             </div>
-            <ErrorMessage class="error-text" name="transfer" />
-          </div>
 
-          <div class="form-group">
-            <label class="form-label">Нужен ли ночлег после свадьбы?</label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <Field class="form-radio" name="agreement" type="radio" value="yes" /> Да
-              </label>
-              <label class="radio-label">
-                <Field class="form-radio" name="agreement" type="radio" value="no" /> Нет
-              </label>
+            <div class="form-group">
+              <label class="form-label">Нужен ли ночлег после свадьбы?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <Field class="form-radio" name="agreement" type="radio" value="yes" /> Да
+                </label>
+                <label class="radio-label">
+                  <Field class="form-radio" name="agreement" type="radio" value="no" /> Нет
+                </label>
+              </div>
+              <ErrorMessage class="error-text" name="agreement" />
             </div>
-            <ErrorMessage class="error-text" name="agreement" />
-          </div>
 
-          <div class="form-group">
-            <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
-            <Field class="text-input" name="music" placeholder="Здесь ввод музыки :)" type="text" :class="{ error: errors.music }" />
-            <ErrorMessage class="error-text" name="music" />
-          </div>
+            <div class="form-group">
+              <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
+              <Field class="text-input" name="music" placeholder="Напишите песни..." type="text" :class="{ error: errors.music }" />
+              <ErrorMessage class="error-text" name="music" />
+            </div>
 
-          <Button class="submit-button" type="submit">Отправить анкету</Button>
-        </Form>
-      </div>
+            <Button class="submit-button" type="submit">Отправить анкету</Button>
+          </Form>
+        </div>
     </div>
     <BorderIcon class="border--bottom border" />
   </div>
@@ -80,8 +65,6 @@
 
 <script setup lang="ts">
 import BorderIcon from '~/components/atomic/BorderIcon.vue';
-import Description from '~/components/atomic/Description.vue';
-import OutlineIcon from '~/components/atomic/OutlineIcon.vue';
 import Title from '~/components/atomic/Title.vue';
 import { ErrorMessage, Field, Form } from 'vee-validate';
 import Button from '~/components/atomic/Button.vue';
@@ -102,53 +85,41 @@ const animationStyle = computed(() => ({
 </script>
 
 <style scoped lang="scss">
-.description {
-  color: $color-primary;
-  padding: 20px;
-
-  &__date {
-    display: inline-block;
-    position: relative;
-  }
-
-  &__icon {
-    &--position {
-      position: absolute;
-      top: -3px;
-      left: -3px;
-    }
-  }
-}
-
 .title {
   color: $color-light;
+}
+
+.wrapper {
+  position: relative;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 50px;
   background-color: $color-primary;
-  padding: 70px 20px;
+  padding: 90px 20px;
 }
 
 .border {
-  position: relative;
+  position: absolute;
   z-index: 3;
 
   &--top {
-    top: 20px;
+    top: -20px;
+    left: 0;
   }
 
   &--bottom {
-    bottom: 20px;
+    bottom: -25px;
+    left: 0;
   }
 }
 
 .wedding-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
   color: $color-light;
   position: relative;
 }
@@ -160,8 +131,14 @@ const animationStyle = computed(() => ({
 }
 
 .form-label {
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 20px;
+  line-height: 26px;
+
+  &__example {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 .text-input {
@@ -175,6 +152,7 @@ const animationStyle = computed(() => ({
   border-radius: 0;
 
   &::placeholder {
+    opacity: 0.6;
     color: $color-light;
   }
 

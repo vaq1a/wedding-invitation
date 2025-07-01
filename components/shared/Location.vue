@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
     <Title class="title">
-      Место <br />
-      проведения
+      Место проведения
     </Title>
     <div class="preview">
       <div class="image-container">
@@ -35,7 +34,12 @@
   });
 
   const handleMapOpen = () => {
-    console.log('Opening map...');
+    const latitude = 53.913317
+    const longitude = 27.209269
+
+    const yandexUrl = `https://yandex.ru/maps/?pt=${longitude},${latitude}&z=15`
+
+    window.open(yandexUrl, '_blank')
   };
 </script>
 
@@ -58,6 +62,7 @@
   }
 
   .image-container {
+    position: relative;
     width: 100%;
   }
 
@@ -84,15 +89,14 @@
     z-index: 3;
 
     &--top {
-      top: -35px;
+      top: -38px;
       left: 0;
       right: 0;
     }
 
     &--bottom {
-      bottom: 15px;
+      bottom: -38px;
       left: 0;
-      right: 0;
     }
   }
 </style>

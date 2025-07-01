@@ -7,7 +7,7 @@
         и близкие!
       </Title>
       <Description class="description">
-        С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!
+        С особым трепетом приглашаем Вас на наш первый семейный праздник - <br> НАШУ СВАДЬБУ!
       </Description>
     </div>
     <BorderIcon class="border--bottom border" />

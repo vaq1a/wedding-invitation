@@ -3,11 +3,11 @@
     <Title class="title"> Дата свадьбы </Title>
     <div ref="calendar" class="calendar" :style="animationStyle">
       <div class="calendar__header">
-        <h3>{{ month }} {{ year }}</h3>
+        <h3 class="calendar__header-title">{{ month }} {{ year }}</h3>
       </div>
       <div class="calendar-grid">
-        <div class="calendar-grid__weekdays">
-          <div v-for="day in WEEK_DAYS" :key="day">{{ day }}</div>
+        <div class="calendar-grid__weekdays weekdays">
+          <div v-for="day in WEEK_DAYS" :key="day" class="weekdays__item">{{ day }}</div>
         </div>
         <div class="calendar-grid__days days">
           <div v-for="empty in EMPTY_DAYS" :key="`empty-${empty}`" class="days__item" />
@@ -65,8 +65,8 @@ const animationStyle = computed(() => ({
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 30px 20px;
+    gap: 34px;
+    padding: 30px 20px 60px;
   }
 
   .title {
@@ -81,6 +81,11 @@ const animationStyle = computed(() => ({
     &__header {
       text-align: center;
       margin-bottom: 16px;
+    }
+
+    &__header-title {
+      font-size: 20px;
+      line-height: 1.25;
     }
   }
 
@@ -98,6 +103,13 @@ const animationStyle = computed(() => ({
     }
   }
 
+  .weekdays {
+    &__item {
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+
   .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -111,6 +123,7 @@ const animationStyle = computed(() => ({
       border-radius: 4px;
       position: relative;
       font-size: 16px;
+      line-height: 1;
 
       &--special-date {
         position: relative;

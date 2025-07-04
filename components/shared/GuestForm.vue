@@ -76,6 +76,7 @@ const { schema, onSubmit } = useGuestForm()
 const form = ref(null)
 const isInView = useInView(form, {
   once: true,
+  margin: "-200px 0px -110px 0px"
 })
 
 const animationStyle = computed(() => ({

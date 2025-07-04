@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <BorderIcon class="border--top border" />
+    <BorderIcon class="border--top border" color="#344611" />
     <div class="invitation">
       <Title>
         Дорогие родные <br />
@@ -24,18 +24,19 @@ import Title from '~/components/atomic/Title.vue';
 .wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .border {
-  position: relative;
+  position: absolute;
   z-index: 3;
 
   &--top {
-    top: 20px;
+    top: -20px;
   }
 
   &--bottom {
-    bottom: 20px;
+    bottom: -20px;
   }
 }
 
@@ -43,7 +44,7 @@ import Title from '~/components/atomic/Title.vue';
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 70px 20px;
+  padding: 40px 20px 80px 20px;
   background-color: $color-primary;
 
   .title,

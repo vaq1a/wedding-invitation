@@ -1,4 +1,5 @@
 <template>
+    <Introduction />
     <Invitation />
     <Calendar />
     <Location />
@@ -16,16 +17,17 @@ import Location from '~/components/shared/Location.vue';
 import Timetable from '~/components/shared/Timetable.vue';
 import Ultimate from '~/components/shared/Ultimate.vue';
 import Details from '~/components/shared/Details.vue';
+import Introduction from '~/components/shared/Introduction.vue';
 
 definePageMeta({
   layout: 'default',
 })
 
 useHead({
-  title: 'Приглашение',
+  title: 'Приглашение на свадьбу!',
   meta: [
-    { name: 'description', content: 'Описание страницы' },
-    { name: 'keywords', content: 'ключевые, слова' },
+    { name: 'description', content: 'Дорогие родные и близкие! С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!' },
+    { name: 'keywords', content: 'свадьба' },
   ],
 });
 </script>

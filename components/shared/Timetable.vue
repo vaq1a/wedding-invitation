@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <Title class="title">Программа дня</Title>
-    <div class="timetable">
+    <div ref="timetable" class="timetable" :style="animationStyle">
       <div class="step">
         <span class="title">15:30</span>
         <HeartIcon class="heart" />
@@ -33,6 +33,17 @@
 <script setup lang="ts">
   import HeartIcon from "~/components/atomic/HeartIcon.vue";
   import Title from "~/components/atomic/Title.vue";
+
+  const timetable = ref(null)
+  const isInView = useInView(timetable, {
+    once: true,
+    margin: "-200px 0px -110px 0px"
+  })
+
+  const animationStyle = computed(() => ({
+    opacity: isInView.value ? 1 : 0,
+    transition: 'all 1s ease-in-out'
+  }))
 </script>
 
 <style scoped lang="scss">

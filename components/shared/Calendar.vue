@@ -52,6 +52,7 @@ withDefaults(defineProps<Props>(), {
 const calendar = ref(null)
 const isInView = useInView(calendar, {
   once: true,
+  margin: "-200px 0px -110px 0px"
 })
 
 const animationStyle = computed(() => ({

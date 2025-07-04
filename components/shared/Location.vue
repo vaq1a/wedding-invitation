@@ -6,7 +6,12 @@
     <div class="preview">
       <div class="image-container">
         <BorderIcon class="border--top border" />
-        <img src="/homestead.png" :alt="imageAlt"  class="responsive-image" />
+        <img
+          src="/homestead.png"
+          :alt="imageAlt"
+          class="responsive-image"
+          loading="lazy"
+        />
         <BorderIcon class="border--bottom border" />
       </div>
       <Button class="button" @click="handleMapOpen">

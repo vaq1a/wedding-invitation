@@ -10,6 +10,7 @@ import { useInView } from 'motion-v'
 const description = ref(null)
 const isInView = useInView(description, {
   once: true,
+  margin: "-200px 0px -110px 0px"
 })
 
 const animationStyle = computed(() => ({

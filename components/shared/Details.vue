@@ -46,6 +46,7 @@ import OutlineIcon from '~/components/atomic/OutlineIcon.vue';
 }
 
 .description {
+  font-size: 18px;
   color: $color-primary;
 
   &__date {
@@ -56,8 +57,8 @@ import OutlineIcon from '~/components/atomic/OutlineIcon.vue';
   &__icon {
     &--position {
       position: absolute;
-      top: -3px;
-      left: -3px;
+      top: -6px;
+      left: -5px;
     }
   }
 }

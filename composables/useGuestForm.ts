@@ -50,7 +50,7 @@ export const useGuestForm = () => {
       .string()
       .required('Имя и фамилия обязательны')
       .min(6, 'Минимум 6 символов')
-      .matches(/^[a-zA-Zа-яА-Я\s\-,.]+$/, 'Только буквы и пробелы'),
+      .matches(/^[a-zA-Zа-яА-Я\s\-,.!]+$/, 'Только буквы и пробелы'),
     presence: yup
       .string()
       .required('Выберите один из вариантов')
@@ -63,7 +63,7 @@ export const useGuestForm = () => {
       .string()
       .optional()
       .min(6, 'Минимум 6 символов')
-      .matches(/^[a-zA-Zа-яА-Я0-9\s\-,.]+$/, 'Только буквы, цифры и пробелы'),
+      .matches(/^[a-zA-Zа-яА-Я0-9\s\-,.!]+$/, 'Только буквы, цифры и пробелы'),
   });
 
   const onSubmit: SubmissionHandler<FormValues, GenericObject, unknown> = async (values, { resetForm }) => {

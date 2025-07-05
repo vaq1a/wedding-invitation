@@ -3,7 +3,7 @@
     <BorderIcon class="border--top border" color="#344611" />
     <div class="invitation">
       <Title>
-        Дорогие родные <br />
+        Дорогие родные <br>
         и близкие!
       </Title>
       <Description class="description">

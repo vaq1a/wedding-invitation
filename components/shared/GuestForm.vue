@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Кукую песню Вы хотите услышать на свадьбе?</label>
+              <label class="form-label">Кукие песни Вы хотите услышать на свадьбе?</label>
               <Field class="text-input" name="music" placeholder="Напишите песни..." type="text" :class="{ error: errors.music }" />
               <ErrorMessage class="error-text" name="music" />
             </div>
@@ -207,10 +207,8 @@ const animationStyle = computed(() => ({
 }
 
 .submit-button {
-  position: absolute;
-  bottom: -110px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
+  margin: 0 auto;
+  background-color: $color-light;
+  color: $color-primary;
 }
 </style>

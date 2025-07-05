@@ -6,23 +6,25 @@
         <span class="title">15:30</span>
         <HeartIcon class="heart" />
         <span class="description">
-          Сбор гостей, <br />
+          Сбор гостей, <br>
           фуршет
         </span>
       </div>
-      <div class="step step--right step--middle">
+      <ProgramLine class="line line--first" />
+      <div class="step">
         <span class="title">16:30</span>
         <HeartIcon class="heart" />
         <span class="description">
-          Свадебная <br />
+          Свадебная <br>
           церемония
         </span>
       </div>
+      <ProgramLine class="line line--second" />
       <div class="step step--end">
         <span class="title">17:00</span>
         <HeartIcon class="heart" />
         <span class="description">
-          Праздничный <br />
+          Праздничный <br>
           банкет
         </span>
       </div>
@@ -33,6 +35,7 @@
 <script setup lang="ts">
   import HeartIcon from "~/components/atomic/HeartIcon.vue";
   import Title from "~/components/atomic/Title.vue";
+  import ProgramLine from '~/components/atomic/ProgramLine.vue';
 
   const timetable = ref(null)
   const isInView = useInView(timetable, {
@@ -62,24 +65,32 @@
     position: relative;
   }
 
+  .line {
+    position: absolute;
+
+    &--first {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 60px;
+    }
+
+    &--second {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 54px;
+    }
+  }
+
   .step {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 120px;
     width: 100%;
     color: $color-primary;
+    margin: 0 auto;
 
-    &--right {
-      margin-left: auto;
-    }
-
-    &--middle {
-      margin-block: 50px;
-    }
-
-    &--end {
-      max-width: 120px;
+    &:not(:last-child) {
+      margin-bottom: 95px;
     }
 
     .title {

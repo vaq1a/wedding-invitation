@@ -79,9 +79,7 @@
   }
 
   .button {
-    position: relative;
-    z-index: 3;
-    margin: -50px auto 0;
+    margin: 25px auto 0;
   }
 
   .description {
@@ -100,7 +98,7 @@
     }
 
     &--bottom {
-      bottom: -38px;
+      bottom: -25px;
       left: 0;
     }
   }

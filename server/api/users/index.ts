@@ -21,10 +21,12 @@ export default defineEventHandler(async (event) => {
           message: "Method not allowed",
         });
     }
-  } catch (error: Error) {
-    throw createError({
-      statusCode: 500,
-      message: error.message,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw createError({
+        statusCode: 500,
+        message: error.message,
+      });
+    }
   }
 });

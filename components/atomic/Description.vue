@@ -19,7 +19,7 @@ const animationStyle = computed(() => ({
 }))
 </script>
 
-<style>
+<style scoped lang="scss">
   .description {
     font-size: 20px;
     line-height: 1.25;

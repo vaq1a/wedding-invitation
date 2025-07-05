@@ -84,8 +84,6 @@ export const useGuestForm = () => {
       toast.success({ message: 'Форма успешно отправлена!' })
       triggerConfetti()
     } catch (error) {
-      console.log(error);
-
       toast.error({ message: 'Произошла ошибка. Повторите снова.' })
     }
   };

@@ -41,8 +41,10 @@ const fetchUsers = async () => {
   error.value = null;
   try {
     users.value = await $fetch("/api/users");
-  } catch (e: any) {
-    error.value = e.message;
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      error.value = e.message;
+    }
   } finally {
     loading.value = false;
   }

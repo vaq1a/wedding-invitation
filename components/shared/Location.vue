@@ -7,7 +7,7 @@
       <div class="image-container">
         <BorderIcon class="border--top border" />
         <img
-          src="/homestead.png"
+          src="/homestead.jpg"
           :alt="imageAlt"
           class="responsive-image"
           loading="lazy"

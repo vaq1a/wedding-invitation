@@ -2,11 +2,14 @@
   <div class="wrapper">
     <Title class="title">Вадим <br> Алина</Title>
     <div class="image-container">
-      <img
+      <nuxt-img
         src="/pair.jpg"
+        width="455"
+        height="809"
+        format="webp"
+        quality="80"
         alt="Вадим и Алина"
         class="responsive-image"
-        loading="lazy"
       />
     </div>
     <Description class="date">

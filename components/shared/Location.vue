@@ -6,11 +6,14 @@
     <div class="preview">
       <div class="image-container">
         <BorderIcon class="border--top border" />
-        <img
+        <nuxt-img
           src="/homestead.jpg"
-          :alt="imageAlt"
+          width="455"
+          height="256"
+          format="webp"
+          quality="80"
+          alt="Место проведения"
           class="responsive-image"
-          loading="lazy"
         />
         <BorderIcon class="border--bottom border" />
       </div>
@@ -30,13 +33,6 @@
   import Button from "~/components/atomic/Button.vue";
   import Description from "~/components/atomic/Description.vue";
   import Title from "~/components/atomic/Title.vue";
-
-  defineProps({
-    imageAlt: {
-      type: String,
-      default: "Место проведения",
-    },
-  });
 
   const handleMapOpen = () => {
     const latitude = 53.913317

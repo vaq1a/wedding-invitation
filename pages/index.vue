@@ -31,7 +31,7 @@ useHead({
     { property: 'og:url', content: 'https://vadim-alina-23-08-2025.up.railway.app' },
     { property: 'og:title', content: 'Приглашение на свадьбу!' },
     { property: 'og:description', content: 'С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!' },
-    { property: 'og:image', content: 'https://vadim-alina-23-08-2025.up.railway.app/pair.jpg' },
+    { property: 'og:image', content: 'https://vadim-alina-23-08-2025.up.railway.app/field.jpg' },
   ],
 });
 </script>

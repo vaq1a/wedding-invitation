@@ -27,6 +27,11 @@ useHead({
   title: 'Приглашение на свадьбу!',
   meta: [
     { name: 'description', content: 'С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://vadim-alina-23-08-2025.up.railway.app' },
+    { property: 'og:title', content: 'Приглашение на свадьбу!' },
+    { property: 'og:description', content: 'С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!' },
+    { property: 'og:image', content: 'https://vadim-alina-23-08-2025.up.railway.app/pair.jpg' },
   ],
 });
 </script>

@@ -7,7 +7,7 @@
         фуршет
       </Step>
       <ProgramLine class="line line--first" />
-      <Step time="16:30">
+      <Step time="16:00">
         Свадебная <br>
         церемония
       </Step>

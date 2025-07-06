@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 15px 30px;
     background-color: $color-primary;
     color: $color-light;
     border: none;
@@ -28,6 +28,7 @@
     transition: all 0.3s ease;
     box-shadow: none;
     outline: none;
+    font-size: 16px;
 
     &:hover {
       opacity: 0.9;

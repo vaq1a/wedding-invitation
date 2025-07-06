@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <Description class="description">
-      Приглашаем отметить этот день вместе с нами!
+      Приглашаем отметить этот день вместе с нами! Будем счастливы видеть Вас в числе наших гостей!
     </Description>
   </div>
 
@@ -13,7 +13,7 @@ import Description from '~/components/atomic/Description.vue';
 
 <style scoped lang="scss">
 .wrapper {
-  padding: 100px 20px;
+  padding: 40px 20px 100px;
 }
 
 .description {

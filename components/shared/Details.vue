@@ -3,19 +3,18 @@
     <Title class="title">Детали</Title>
     <div class="content">
       <Description class="description">
-        Пожалуйста, подтвердите свое присутствие и заполните анкету до <span class="description__date"
-      >01.08.2025 <OutlineIcon class="description__icon description__icon--position" /></span
-      >, чтобы мы могли планировать торжество наилучшим образом
-      </Description>
-      <Description class="description">
-        Будем рады, если при выборе нарядов Вы сделаете выбор в пользу светлых, пастельных или благородных природных цветов.
-        В женских нарядах исключением является белый цвет.
+        Будем признательны, если вы отдадите предпочтение нарядам в элегантных светлых, нежных пастельных или изысканных природных тонах. В женских нарядах исключением является белый цвет.
       </Description>
       <Description class="description">
         Просим Вас не дарить нам цветы.
         Если Вы хотите сделать нам
         комплимент, замените букет
         бутылкой Вашего любимого алкоголя.
+      </Description>
+      <Description class="description">
+        Пожалуйста, подтвердите свое присутствие и заполните анкету до <span class="description__date"
+      >01.08.2025 <OutlineIcon class="description__icon description__icon--position" /></span
+      >, чтобы мы могли планировать торжество наилучшим образом
       </Description>
     </div>
   </div>

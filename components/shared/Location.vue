@@ -75,7 +75,9 @@
   }
 
   .button {
-    margin: 25px auto 0;
+    position: relative;
+    z-index: 3;
+    margin: 5px auto 0;
   }
 
   .description {

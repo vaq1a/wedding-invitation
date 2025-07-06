@@ -14,7 +14,7 @@
       <Description class="description">
         Пожалуйста, подтвердите свое присутствие и заполните анкету до <span class="description__date"
       >01.08.2025 <OutlineIcon class="description__icon description__icon--position" /></span
-      >, чтобы мы могли планировать торжество наилучшим образом
+      >, чтобы мы могли планировать торжество наилучшим образом.
       </Description>
     </div>
   </div>

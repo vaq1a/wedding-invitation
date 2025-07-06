@@ -25,6 +25,9 @@ definePageMeta({
 
 useHead({
   title: 'Приглашение на свадьбу!',
+  htmlAttrs: {
+    lang: 'ru'
+  },
   meta: [
     { name: 'description', content: 'С особым трепетом приглашаем Вас на наш первый семейный праздник - НАШУ СВАДЬБУ!' },
     { property: 'og:type', content: 'website' },

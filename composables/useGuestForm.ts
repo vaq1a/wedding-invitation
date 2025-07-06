@@ -26,8 +26,7 @@ export const useGuestForm = () => {
     music: yup
       .string()
       .optional()
-      .min(6, 'Минимум 6 символов')
-      .matches(/^[a-zA-Zа-яА-Я0-9\s\-,.!]+$/, 'Только буквы, цифры и пробелы'),
+      .min(6, 'Минимум 6 символов').max(100, 'Максимум 100 символов'),
   });
 
   const onSubmit: SubmissionHandler<FormValues, GenericObject, unknown> = async (values, { resetForm }) => {

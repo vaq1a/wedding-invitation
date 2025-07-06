@@ -10,6 +10,7 @@
         quality="80"
         alt="Вадим и Алина"
         class="responsive-image"
+        preload
       />
     </div>
     <Description class="date">

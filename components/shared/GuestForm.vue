@@ -50,8 +50,8 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Кукие песни Вы хотите услышать на свадьбе?</label>
-              <Field class="text-input" name="music" placeholder="Напишите песни..." type="text" :class="{ error: errors.music }" />
+              <label class="form-label">Какую песню Вы хотите услышать на свадьбе?</label>
+              <Field class="text-input" name="music" placeholder="Напишите песню..." type="text" :class="{ error: errors.music }" />
               <ErrorMessage class="error-text" name="music" />
             </div>
 
